@@ -1,0 +1,27 @@
+﻿@model WA_FormManagement.UI.ViewModels.FormsViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 pt-4" style="margin:auto;">
+            @foreach (var field in Model.FormFields)
+            {
+                <div class="form-group pt-2">
+                    <label>@field.Name</label>
+                    @if (field.DataType == "text")
+                    {
+                        <input type="text" class="form-control" name="@field.Name" required="@field.Required" />
+                    }
+                    else if (field.DataType == "number")
+                    {
+                        <input type="number" class="form-control" name="@field.Name" required="@field.Required" />
+                    }
+                    else if (field.DataType == "date")
+                    {
+                        <input type="date" class="form-control" name="@field.Name" required="@field.Required" />
+                    }
+                </div>
+            }
+            <button type="button" class="btn btn-success pt-2">Submit</button>
+        </div>
+    </div>
+</div>

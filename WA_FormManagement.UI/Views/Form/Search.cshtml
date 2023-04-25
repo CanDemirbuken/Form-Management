@@ -1,0 +1,25 @@
+﻿@model WA_FormManagement.UI.ViewModels.FormsViewModel
+
+<div class="container">
+    <table class="table table-dark table-stripped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Form Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var form in Model.Forms)
+            {
+                <tr>
+                    <td>@form.Id</td>
+                    <td>@form.FormName</td>
+                    <td>@form.Description</td>
+                    <td>@form.CreatedAt</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
